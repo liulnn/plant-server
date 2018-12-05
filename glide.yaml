@@ -1,0 +1,8 @@
+package: plant-server
+import:
+- package: github.com/kataras/iris
+  version: ~11.1.0
+  subpackages:
+  - middleware/logger
+  - middleware/recover
+  - mvc

@@ -2,6 +2,7 @@ package jade
 
 import (
 	"io/ioutil"
+	"log"
 	"os"
 	"path/filepath"
 	"strings"
@@ -72,7 +73,7 @@ func (t *Tree) hub(token item) (n Node) {
 			return t.parseInclude(token)
 		case itemDoctype:
 			return t.newDoctype(token.pos, token.val)
-		case itemFilter, itemFilterText:
+		case itemFilter:
 			return t.parseFilter(token)
 		case itemError:
 			t.errorf("Error lex: %s line: %d\n", token.val, token.line)
@@ -83,8 +84,55 @@ func (t *Tree) hub(token item) (n Node) {
 }
 
 func (t *Tree) parseFilter(tk item) Node {
-	// TODO add golang filters
-	return t.newList(tk.pos)
+	var subf, args, text string
+Loop:
+	for {
+		switch token := t.nextNonSpace(); token.typ {
+		case itemFilterSubf:
+			subf = token.val
+		case itemFilterArgs:
+			args = strings.Trim(token.val, " \t\n")
+		case itemFilterText:
+			text = strings.Trim(token.val, " \t\n")
+		default:
+			break Loop
+		}
+	}
+	t.backup()
+	switch tk.val {
+	case "go":
+		filterGo(subf, args, text)
+	case "markdown", "markdown-it":
+		// TODO: filterMarkdown(subf, args, text)
+	}
+	return t.newList(tk.pos) // for return nothing
+}
+
+func filterGo(subf, args, text string) {
+	switch subf {
+	case "func":
+		Go.Name = ""
+		switch args {
+		case "name":
+			Go.Name = text
+		case "arg", "args":
+			if Go.Args != "" {
+				Go.Args += ", " + strings.Trim(text, "()")
+			} else {
+				Go.Args = strings.Trim(text, "()")
+			}
+		default:
+			fn := strings.Split(text, "(")
+			if len(fn) == 2 {
+				Go.Name = strings.Trim(fn[0], " \t\n)")
+				Go.Args = strings.Trim(fn[1], " \t\n)")
+			} else {
+				log.Fatal(":go:func filter error in " + text)
+			}
+		}
+	case "import":
+		Go.Import = text
+	}
 }
 
 func (t *Tree) parseTag(tk item) Node {

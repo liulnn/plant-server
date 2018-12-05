@@ -6,8 +6,8 @@ import (
 	"github.com/kataras/iris/middleware/recover"
 	"github.com/kataras/iris/mvc"
 
-	"./comment"
-	"./plant"
+	"plant-server/comment"
+	"plant-server/plant"
 )
 
 // This example is equivalent to the

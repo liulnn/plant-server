@@ -1,0 +1,154 @@
+hash: 5d097124b2e563ee11eaaea1f27e8550ae657b3e07f591ce0b1810c99353ce5a
+updated: 2018-12-05T13:07:16.702854+08:00
+imports:
+- name: github.com/ajg/form
+  version: 523a5da1a92f01b01f840b61689c0340a0243532
+- name: github.com/aymerick/raymond
+  version: b565731e1464263de0bda75f2e45d97b54b60110
+  subpackages:
+  - ast
+  - lexer
+  - parser
+- name: github.com/BurntSushi/toml
+  version: 3012a1dbe2e4bd1391d42b32f0577cb7bbc7f005
+- name: github.com/davecgh/go-spew
+  version: d8f796af33cc11cb798c1aaeb27a4ebc5099927d
+  subpackages:
+  - spew
+- name: github.com/eknkc/amber
+  version: cdade1c073850f4ffc70a829e31235ea6892853b
+  subpackages:
+  - parser
+- name: github.com/fatih/structs
+  version: 878a968ab22548362a09bdb3322f98b00f470d46
+- name: github.com/flosch/pongo2
+  version: 24195e6d38b06020d7a92c7b11960cf2e7cad2f2
+- name: github.com/gavv/monotime
+  version: 6f8212e8d10df7383609d3c377ca08884d8f3ec0
+- name: github.com/google/go-querystring
+  version: 44c6ddd0a2342c386950e880b658017258da92fc
+  subpackages:
+  - query
+- name: github.com/imkira/go-interpol
+  version: 5accad8134979a6ac504d456a6c7f1c53da237ca
+- name: github.com/iris-contrib/blackfriday
+  version: 48b3da6a6f3865c7eb1eba96d74cf0a16f63faca
+- name: github.com/iris-contrib/formBinder
+  version: ad9fb86c356f971f30319c40ddbdcf72129a2791
+- name: github.com/iris-contrib/go.uuid
+  version: 36e9d2ebbde5e3f13ab2e25625fd453271d6522e
+- name: github.com/iris-contrib/httpexpect
+  version: ebe99fcebbcedf6e7916320cce24c3e1832766ac
+- name: github.com/Joker/jade
+  version: 82af6d9e80207a5e5d05cfea1c5669fa136e77ae
+- name: github.com/json-iterator/go
+  version: d05f387f50c0c406889b62cb5ec51c76a64d89ee
+- name: github.com/juju/errors
+  version: 089d3ea4e4d597bd98acac068193d341983326a3
+- name: github.com/kataras/golog
+  version: 03be101463868edc5a81f094fc68a5f6c1b5503a
+- name: github.com/kataras/iris
+  version: 91118c6b07fc9ad466df139f0846267aed1734b1
+  subpackages:
+  - cache
+  - cache/cfg
+  - cache/client
+  - cache/client/rule
+  - cache/entry
+  - cache/ruleset
+  - cache/uri
+  - context
+  - core/errors
+  - core/handlerconv
+  - core/host
+  - core/memstore
+  - core/netutil
+  - core/router
+  - hero
+  - hero/di
+  - httptest
+  - macro
+  - macro/handler
+  - macro/interpreter/ast
+  - macro/interpreter/lexer
+  - macro/interpreter/parser
+  - macro/interpreter/token
+  - middleware/logger
+  - middleware/recover
+  - mvc
+  - sessions
+  - view
+- name: github.com/kataras/pio
+  version: a9733b5b6b83d32b479aacd51d26ef6018261963
+  subpackages:
+  - terminal
+- name: github.com/klauspost/compress
+  version: 30be6041bed523c18e269a700ebd9c2ea9328574
+  subpackages:
+  - flate
+  - gzip
+- name: github.com/klauspost/cpuid
+  version: c640019ed4bda023bac884990967336803e39e3a
+- name: github.com/klauspost/crc32
+  version: bab58d77464aa9cf4e84200c3276da0831fe0c03
+- name: github.com/microcosm-cc/bluemonday
+  version: 82c7118e8ccf7403d4860175d97bb635e8e28239
+- name: github.com/modern-go/concurrent
+  version: bacd9c7ef1dd9b15be4a9909b8ac7a4e313eec94
+- name: github.com/modern-go/reflect2
+  version: 94122c33edd36123c84d5368cfb2b69df93a0ec8
+- name: github.com/moul/http2curl
+  version: 9ac6cf4d929b2fa8fd2d2e6dec5bb0feb4f4911d
+- name: github.com/pmezard/go-difflib
+  version: 792786c7400a136282c1664665ae0a8db921c6c2
+  subpackages:
+  - difflib
+- name: github.com/ryanuber/columnize
+  version: abc90934186a77966e2beeac62ed966aac0561d5
+- name: github.com/sergi/go-diff
+  version: 24e2351369ec4949b2ed0dc5c477afdd4c4034e8
+  repo: https://github.com/sergi/go-diff
+  subpackages:
+  - diffmatchpatch
+- name: github.com/Shopify/goreferrer
+  version: ec9c9a553398739f0dcf817e0ad5e01c4e7dcd08
+- name: github.com/shurcooL/sanitized_anchor_name
+  version: 86672fcb3f950f35f2e675df2240550f2a50762f
+- name: github.com/stretchr/testify
+  version: 8019298d9fa5a04fc2ad10ae03349df3483096a6
+  subpackages:
+  - assert
+  - require
+- name: github.com/xeipuuv/gojsonpointer
+  version: 4e3ac2762d5f479393488629ee9370b50873b3a6
+- name: github.com/xeipuuv/gojsonreference
+  version: bd5ef7bd5415a7ac448318e64f11a24cd21e594b
+- name: github.com/xeipuuv/gojsonschema
+  version: ac52e6811b56ee2b7730a88915e956afe2cc0d69
+- name: github.com/yalp/jsonpath
+  version: 5cc68e5049a040829faef3a44c00ec4332f6dec7
+- name: github.com/yudai/gojsondiff
+  version: 0525c875b75ca60b9e67ddc44496aa16f21066b0
+  subpackages:
+  - formatter
+- name: github.com/yudai/golcs
+  version: d1c525dea8ce39ea9a783d33cf08932305373f2c
+  repo: https://github.com/yudai/golcs
+- name: golang.org/x/crypto
+  version: 505ab145d0a99da450461ae2c1a9f6cd10d1f447
+  subpackages:
+  - acme
+  - acme/autocert
+- name: golang.org/x/net
+  version: 351d144fa1fc0bd934e2408202be0c29f25e35a0
+  subpackages:
+  - html
+  - html/atom
+  - publicsuffix
+- name: golang.org/x/sys
+  version: 4ed8d59d0b35e1e29334a206d1b3f38b1e5dfb31
+  subpackages:
+  - unix
+- name: gopkg.in/yaml.v2
+  version: 51d6538a90f86fe93ac480b35f37b2be17fef232
+testImports: []
