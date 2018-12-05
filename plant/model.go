@@ -2,22 +2,22 @@ package plant
 
 import (
 	"time"
+	"github.com/go-xorm/xorm"
+	_ "github.com/mattn/go-sqlite3"
 )
 
-var plants map[int64]Plant
-
-func init() {
-	plants = make(map[int64]Plant)
-}
-
 type Plant struct {
-	PlantId   int64
-	CreatedAt time.Time
+	ID        int64  // auto-increment by-default by xorm
+	Name	  string `xorm:"varchar(100)"`
+        Summary   string `xorm:"text"`
+        Detail	  string `xorm:"text"`
+	CreatedAt time.Time `xorm:"created"`
+	UpdatedAt time.Time `xorm:"updated"`
 }
 
 func Add(p Plant) (err error, plantId int64) {
-	plants[p.PlantId] = p
-	return nil, p.PlantId
+	plants[p.Id] = p
+	return nil, p.Id
 }
 
 func Update(p Plant) {
